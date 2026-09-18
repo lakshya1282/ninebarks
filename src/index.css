@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+/* 
+  =========================================
+  NINEBARK DESIGN SYSTEM TOKENS
+  =========================================
+*/
+
+:root {
+  /* Color Fragments Palette */
+  --color-dark-obsidian: #131312;
+  --color-dark-charcoal: #1D1D1B;
+  --color-slate-olive: #45443F;
+  --color-sage-green: #6B7263;
+  --color-warm-gray: #6F6E67;
+  --color-pale-sage: #AAB8A2;
+  --color-stone-gray: #B5B4AC;
+  --color-off-white: #F6F6F3;
+
+  /* Semantic Aliases */
+  --bg-primary: var(--color-off-white);
+  --bg-secondary: #FFFFFF;
+  --bg-dark: var(--color-dark-obsidian);
+  --bg-card: #FFFFFF;
+  --bg-card-dark: var(--color-dark-charcoal);
+
+  --text-primary: var(--color-dark-obsidian);
+  --text-secondary: var(--color-slate-olive);
+  --text-muted: var(--color-warm-gray);
+  --text-inverse: var(--color-off-white);
+
+  --border-subtle: rgba(181, 180, 172, 0.35);
+  --border-strong: var(--color-slate-olive);
+  --accent-primary: var(--color-sage-green);
+  --accent-soft: var(--color-pale-sage);
+
+  /* Typography Font Families */
+  --font-serif-hedvig: 'Hedvig Letters Serif', 'PP Fragment Serif', Georgia, serif;
+  --font-serif-light: 'Hedvig Letters Serif', 'PP Fragment Serif', Georgia, serif;
+  --font-montreal: 'PP Neue Montreal', 'Neue Montreal', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-inter: 'PP Neue Montreal', 'Neue Montreal', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Local Font Face Placeholders for PP Fragment */
+@font-face {
+  font-family: 'PP Fragment Serif';
+  src: local('PP Fragment Serif Light'), local('PPFragment-SerifLight');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Fragment Serif';
+  src: local('PP Fragment Serif Regular'), local('PPFragment-SerifRegular');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Fragment Glare';
+  src: local('PP Fragment Glare Light'), local('PPFragment-GlareLight');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-off-white);
+  color: var(--color-dark-obsidian);
+  font-family: var(--font-inter);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-off-white);
+  color: var(--color-dark-obsidian);
+  font-family: var(--font-inter);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 
+  =========================================
+  TYPOGRAPHY UTILITIES ACCORDING TO SPECS
+  =========================================
+*/
+
+/* Titles (h1) - PP Fragment Serif Light */
+h1, .title-serif-light {
+  font-family: var(--font-serif-light);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* h2 Headings - PP Fragment Glare Light */
+h2, .heading-glare-light {
+  font-family: var(--font-serif-light);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+/* Navbar Links & Header Items - PP Fragment Serif Regular */
+.nav-serif-regular {
+  font-family: var(--font-serif-regular);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Paragraphs & Small Details - Inter Regular (400) and Light (300) */
+p, .text-detail {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--color-slate-olive);
+}
+
+.text-detail-light {
+  font-family: var(--font-inter);
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: var(--color-warm-gray);
+}
+
+.text-detail-sm {
+  font-family: var(--font-inter);
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+/* Large Editorial Paragraph Class for Who This Is For */
+.editorial-hero-para {
+  font-family: 'Inter', "Inter Fallback", system-ui, -apple-system, sans-serif !important;
+  font-size: clamp(32px, 3.2vw, 54px) !important;
+  line-height: 1.22 !important;
+  letter-spacing: normal !important;
+}
+
+/* 
+  =========================================
+  DESIGN SYSTEM BUTTONS & UI COMPONENTS
+  =========================================
+*/
+
+.btn-ds-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-off-white);
+  background-color: var(--color-dark-obsidian);
+  border: 1px solid var(--color-dark-obsidian);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-ds-primary:hover {
+  background-color: var(--color-sage-green);
+  border-color: var(--color-sage-green);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(107, 114, 99, 0.4);
+}
+
+.btn-ds-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-dark-obsidian);
+  background-color: transparent;
+  border: 1px solid var(--color-slate-olive);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-ds-secondary:hover {
+  background-color: var(--color-pale-sage);
+  border-color: var(--color-sage-green);
+  transform: translateY(-2px);
+}
+
+.btn-ds-sage {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  background-color: var(--color-sage-green);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(107, 114, 99, 0.25);
+}
+
+.btn-ds-sage:hover {
+  background-color: var(--color-dark-obsidian);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-off-white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone-gray);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-warm-gray);
+}
