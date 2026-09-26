@@ -34,26 +34,19 @@ export default function Navbar() {
             Projects
           </a>
 
-          {/* Services Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex items-center gap-1 hover:text-white cursor-pointer bg-transparent border-none p-0 text-slate-100 font-medium text-sm"
-            >
-              <span>Services</span>
-              <ChevronDown size={14} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {servicesOpen && (
-              <div className="absolute left-0 top-8 w-48 bg-[#131312]/95 backdrop-blur-md border border-white/10 rounded-lg py-2 px-3 flex flex-col gap-2 text-xs font-mono text-slate-200 shadow-2xl">
-                <a href="#services" className="hover:text-white py-1">Exterior Repainting</a>
-                <a href="#services" className="hover:text-white py-1">UV Protection Coating</a>
-                <a href="#services" className="hover:text-white py-1">Front Range Restoration</a>
-              </div>
-            )}
-          </div>
+          {/* Services Link */}
+          <a href="/services" className="hover:text-white transition-colors">
+            Services
+          </a>
 
-          <a href="#about" className="hover:text-white transition-colors">
-            About
+          {/* Before & After Link */}
+          <a href="/before-after" className="hover:text-white transition-colors">
+            Before & After
+          </a>
+
+          {/* Crew Link */}
+          <a href="/crew" className="hover:text-white transition-colors">
+            Crew
           </a>
 
           {/* Resources Dropdown */}
